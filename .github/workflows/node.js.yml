@@ -36,8 +36,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: see current directory
+      run: pwd
     - name: See directory structure
-      run: ls -R
+      run: ls -al
     - name: See Node.js version
       run: node -v
     - name: See npm version
@@ -52,4 +54,8 @@ jobs:
       run: |
         mkdir moved
         mv newfile.txt moved/
+    - name: List files after moved
+      runs: ls -la
+    - name: Save moved dir content
+      run: ls -la moved/
 
