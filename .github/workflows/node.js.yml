@@ -55,7 +55,7 @@ jobs:
         mkdir moved
         mv newfile.txt moved/
     - name: List files after moved
-      runs: ls -la
+      run: ls -la
     - name: Save moved dir content
       run: ls -la moved/
 
