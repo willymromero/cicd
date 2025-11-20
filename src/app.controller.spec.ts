@@ -35,4 +35,10 @@ describe('AppController', () => {
       expect(appController.pong()).toBe('ping');
     });
   });
-});
+
+  describe('Is gonna be an error', () => {
+    it('Error will not pass', () => {
+      expect(true).toBe(false);
+    }
+  )})
+}); 
