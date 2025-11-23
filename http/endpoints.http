@@ -1,0 +1,8 @@
+### Post ping
+POST http://localhost:4000/ping
+
+### Get pong
+GET http://localhost:4000/pong
+
+### Get dummy envs
+GET http://localhost:4000/dummy-envs
