@@ -14,4 +14,9 @@ export class AppController {
   pong(): string {
     return this.appService.pong();
   }
+
+  @Get('dummy-envs')
+  dummyEnvs(): Record<string, string> {
+    return this.appService.dummyEnvs();
+  }
 }
