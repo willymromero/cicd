@@ -29,3 +29,6 @@ jobs:
 
       - name: Log directory structure
         run: ls -al
+
+      - name: Run tests
+        run: npm test
