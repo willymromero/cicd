@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: ["dev"]
 
+# Step 2.1 (Optional): Add environment variables
+env:
+  DUMMY_ENV_1: "THIS IS ENV 1"
+  DUMMY_ENV_2: "THIS IS ENV 2"
+
 # Step 3: Configure the jobs for the runner
 jobs:
   build:
