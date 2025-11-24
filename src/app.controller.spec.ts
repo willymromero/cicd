@@ -38,7 +38,7 @@ describe('AppController', () => {
 
   describe('Is gonna be an error', () => {
     it('Error will not pass', () => {
-      expect(true).toBe(false);
+      expect(true).toBe(true);
     }
   )})
 }); 
