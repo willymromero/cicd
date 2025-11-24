@@ -35,5 +35,8 @@ jobs:
       - name: Log directory structure
         run: ls -al
 
+      - name: Shwing envs (Test purpose)
+        run: printenv
+
       - name: Run tests
         run: npm test
