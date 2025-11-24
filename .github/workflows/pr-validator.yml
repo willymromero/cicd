@@ -8,8 +8,8 @@ on:
 
 # Step 2.1 (Optional): Add environment variables
 env:
-  DUMMY_ENV_1: "THIS IS ENV 1"
-  DUMMY_ENV_2: "THIS IS ENV 2"
+  DUMMY_ENV_1: ${{ secrets.DUMMY_ENV_1 }}
+  DUMMY_ENV_2: ${{ secrets.DUMMY_ENV_2 }}
 
 # Step 3: Configure the jobs for the runner
 jobs:
