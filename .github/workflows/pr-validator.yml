@@ -8,6 +8,9 @@ on:
 
 # Step 2.1 (Optional): Add environment variables
 env:
+  PORT: 3000
+  STAGE: "prod"
+  CONTAINER_NAME: "cicd-app"
   DUMMY_ENV_1: ${{ secrets.DUMMY_ENV_1 }}
   DUMMY_ENV_2: ${{ secrets.DUMMY_ENV_2 }}
 
@@ -48,10 +51,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Create .env file
+        run: |
+          echo "PORT=${{ env.PORT }}" >> .env
+          echo "STAGE=${{ env.STAGE }}" >> .env
+          echo "CONTAINER_NAME=${{ env.CONTAINER_NAME }}" >> .env
+          echo "DUMMY_ENV_1=${{ env.DUMMY_ENV_1}}" >> .env
+          echo "DUMMY_ENV_2=${{ env.DUMMY_ENV_2}}" >> .env
+
+      - name: Show created .env file (for debug purpose)
+        run: cat .env
+
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20.x"
 
       - name: Build image
-        run: docker-compose -f "compose.build.yml" build --no-cache
+        run: compose -f compose.build.yml build --no-cache
