@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile
+      target: ${STAGE}
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - ${PORT}:${PORT}
+    env_file:
+      - .env
+    restart: on-failure
